@@ -15,9 +15,14 @@ export default {
   },
   setup() {
     // const message = ref('Hello, Vassily!!!');
-    const {result} = useQuery(getContacts);
-    console.log(result.value);
-    return result.value;
+    const {loading, data: {t} = {}} = useQuery(getContacts);
+    if (loading) {
+      console.log('Loading...');
+    } else {
+      console.log(t);
+      return {t};
+    }
+    
   },
   
 }
