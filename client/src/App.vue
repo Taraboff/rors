@@ -3,10 +3,11 @@
 </template>
 
 <script>
+
 import Header from './components/Header.vue'
 // import { ref } from 'vue'
-import { useQuery } from '@vue/apollo-composable'
-import getContacts from './graphql/allContacts.query.gql'
+// import { useQuery } from '@vue/apollo-composable'
+// import getContacts from './graphql/allContacts.query.gql'
 
 export default {
   name: 'App',
@@ -15,14 +16,9 @@ export default {
   },
   setup() {
     // const message = ref('Hello, Vassily!!!');
-    const {loading, data: {t} = {}} = useQuery(getContacts);
-    if (loading) {
-      console.log('Loading...');
-    } else {
-      console.log(t);
-      return {t};
-    }
     
+
+
   },
   
 }
